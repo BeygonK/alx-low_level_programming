@@ -8,7 +8,8 @@
 
 int _abs(int a)
 {
-	return abs(a);
-	return (0);
-	_putchar('\n');
+	if (a < 0)
+		return (-a);
+	else
+		return (a);
 }
