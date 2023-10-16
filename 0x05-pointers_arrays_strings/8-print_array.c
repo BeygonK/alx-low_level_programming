@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_array - Function
+ * print_array - print array
  * @a: param
  * @n: param
  * Return: 0;
@@ -19,4 +19,5 @@ void print_array(int *a, int n)
 			printf(", ");
 		}
 	}
+	printf("\n");
 }
