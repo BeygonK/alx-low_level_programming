@@ -6,8 +6,8 @@
 
 void generatePassword(char *password, int length) {
     char characters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	int i;
-    for (i = 0; i < length; ++i) {
+
+    for (int i = 0; i < length; ++i) {
         password[i] = characters[rand() % (sizeof(characters) - 1)];
     }
 
