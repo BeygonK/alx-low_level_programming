@@ -2,25 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 10
+int main() {
+    srand(time(0)); // Seed the random number generator with the current time
 
-void generatePassword(char *password, int length) {
-    char characters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    char password[5]; // Array to hold the password, +1 for the null terminator
 
-    for (int i = 0; i < length; ++i) {
-        password[i] = characters[rand() % (sizeof(characters) - 1)];
+    // Generate the first 3 characters
+    for (int i = 0; i < 3; i++) {
+        password[i] = 'A' + rand() % 26; // Generate a random uppercase letter
     }
 
-    password[length] = '\0'; // Null-terminate the password
-}
+    // Generate the last character
+    password[3] = '0' + rand() % 10; // Generate a random number
 
-int main() {
-    srand(time(NULL)); // Seed the random number generator with the current time
+    password[4] = '\0'; // Null terminate the password
 
-    char password[PASSWORD_LENGTH + 1]; // +1 for the null terminator
-    generatePassword(password, PASSWORD_LENGTH);
-
-    printf("Generated Password: %s\n", password);
+    printf("%s\n", password); // Print the password
 
     return 0;
 }
