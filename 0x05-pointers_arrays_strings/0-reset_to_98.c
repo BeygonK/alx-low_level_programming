@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * reset_to_98 - Restes to 98
- * @*n: POinter
+ * @n: POinter
  * Return: 0
  */
 void reset_to_98(int *n)
