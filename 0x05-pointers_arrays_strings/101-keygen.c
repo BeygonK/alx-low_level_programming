@@ -4,7 +4,7 @@
 
 int main() {
     int i;
-    char password[5]; // Array to hold the password, +1 for the null terminator
+    char password[5];
 
     srand(time(0)); /* Seed the random number generator with the current time */
 
