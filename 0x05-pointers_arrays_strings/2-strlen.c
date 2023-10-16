@@ -1,5 +1,5 @@
 #include "main.h"
-#include <ctype.h>
+#include <string.h>
 /**
  * _strlen - return lenght of a stringth
  * @s: param
