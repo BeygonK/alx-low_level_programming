@@ -17,4 +17,16 @@ void generatePassword(char *password, int length)
 		password[i] = characters[rand() % (sizeof(characters) - 1)];
 	}
 	password[length] = '\0';
+
+}
+
+int main()
+{
+	srand(time(NULL));
+
+	char password[PASSWORD_LENGTH + 1];
+	generatePassword(password, PASSWORD_LENGTH);
+	printf("Generated: %s\n", password);
+
+	return (0)
 }
