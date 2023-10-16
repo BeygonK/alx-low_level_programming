@@ -24,9 +24,8 @@ int main()
 {
 	srand(time(NULL));
 
-	char password[PASSWORD_LENGTH + 1];
 	generatePassword(password, PASSWORD_LENGTH);
 	printf("Generated: %s\n", password);
 
-	return (0)
+	return (0);
 }
