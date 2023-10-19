@@ -1,6 +1,5 @@
 #include "main.h"
 #include <string.h>
-#define N 1000
 /**
  * reverse_array - Reverses an array
  * @a: first param
@@ -9,19 +8,12 @@
  */
 void reverse_array(int *a, int n)
 {
-	int start, end, temp;
-
-	start = 0;
-	end = n - 1;
-
-	while (start < end)
+	int i, temp;
+	
+	for (i = 0; i < n / 2; i++)
 	{
-		temp = a[start];
-		a[start] = end;
-		a[end] = temp;
-
-		start++;
-		end--;
+		temp = a[i];
+		a[i] = a[n - 1 - i];
+		a[a - 1 - i] = temp;
 	}
-
-}	
+}
