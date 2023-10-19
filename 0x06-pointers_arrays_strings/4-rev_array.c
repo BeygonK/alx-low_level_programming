@@ -8,18 +8,20 @@
  * Return: 0
  */
 void reverse_array(int *a, int n)
-{	
-	int i;
+{
+	int start, end, temp;
 
-	int arr2[N];
+	start = 0;
+	end = n - 1;
 
-	for (i = 0; i < n; i++)
+	while (start < end)
 	{
-		arr2[i] = arr[n-i-1];
+		temp = a[start];
+		a[start] = end;
+		a[end] = temp;
+
+		start++;
+		end--;
 	}
 
-	for (i = 0; i < n; i++)
-	{
-		a[i] = arr2[i];
-	}
-}
+}	
