@@ -6,5 +6,14 @@
  */
 char *string_toupper(char *str)
 {
-	return (toupper(str));
+	char *ptr;
+
+	ptr = str;
+	while (ptr != '\0')
+	{
+		ptr = toupper(ptr);
+		ptr++;
+	}
+	return (ptr);
+
 }
