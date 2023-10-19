@@ -9,7 +9,10 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	return strncat(dest, src, n);
+	char *temp;
 
-	return (0)
+	temp = strncat(dest, src, n);
+	return (temp);
+
+	return (0);
 }
