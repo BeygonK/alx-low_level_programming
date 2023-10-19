@@ -20,7 +20,7 @@ char *rot13(char *str)
 			{
 				str[i] = s2[j];
 				break;
-			}	
+			}
 		}
 	}
 	return (str);
