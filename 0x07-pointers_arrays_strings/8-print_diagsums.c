@@ -2,13 +2,16 @@
 #include <stdio.h>
 
 /**
- * print diagsums - Function
+ * print_diagsums - Function
  * @a: matrix of the integres
  * @size: size of matrix
  */
 void print_diagsums(int *a, int size)
 {
-	int index, sum1 = 0; sum2 = 0;
+	int index, sum1, sum2;
+
+	sum = 0;
+	sum2 = 0;
 
 	for (index = 0; index < size; index++)
 	{
