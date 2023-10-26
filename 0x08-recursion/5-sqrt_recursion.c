@@ -12,21 +12,21 @@ int _sqrt_recursion(int n)
 	else if (n == 0 || n == 1)
 		return (n);
 	else
-		return (_sqrt_recursive_a(n, 1));
+		return (_sqrt_recursive(n, 1));
 }
 
 /**
- * _sqrt_recursive_a - helper function
- * @n: NUmber
+ * _sqrt_recursive - helper function
+ * @y: NUmber
  * @x: current
  * Return: Square root
  */
-int _sqrt_recursive_a(int n, int x)
+int _sqrt_recursive(int y, int x)
 {
-	if (x * x == n)
+	if (x * x == y)
 		return (x);
-	else if (x * x > n)
+	else if (x * x > y)
 		return (-1);
 	else
-		return (_sqrt_recursive_a(n, x + 1));
+		return (_sqrt_recursive(y, x + 1));
 }
