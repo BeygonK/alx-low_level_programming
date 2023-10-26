@@ -2,6 +2,7 @@
 /**
  * is_prime_recursive - Checks for prime number
  * @n: Integer to be checked
+ * @divisor: param
  * Return: int
  */
 int is_prime_recursive(int n, int divisor)
