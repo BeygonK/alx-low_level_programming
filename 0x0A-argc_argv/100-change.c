@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 /**
  * main - entry point
@@ -10,32 +9,30 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+	int cents, mncoin = 0;
+
+	if (argc == 1 || argc > 2)
 	{
-		fprint(stderr, "Error\n");
+		printf("Error\n");
 		return (1);
 	}
 
-	int cents;
-
 	cents = atoi(argv[1]);
-	if (cents < 0)
+
+	while (cents > 0)
 	{
-		printf("0\n");
-		return (0);
+		if (cents >= 25)
+			cents -= 25;
+		if (cents >= 10)
+			cents -= 10;
+		if (cents >= 5)
+			cents -= 5;
+		if (cents >= 2)
+			cents -= 2;
+		if (cents >= 1)
+			cents -= 1;
+		mncoin += 1;
 	}
-	int coins;
-	int i;
-
-	coins = 0;
-	int coin_values[] = {25, 10, 5, 2, 1};
-
-	for (i = 0; i < 5; i++)
-	{
-		coins += cents / coin_values[i];
-		cents %= coin_values[i];
-	}
-
-	printf("%d\n", coins);
+	printf("%d\n", mncoin);
 	return (0);
 }
