@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 /**
- * _strduo - duplicates the stringf
+ * _strdup - duplicates the stringf
  * @str: string
  *
  * Return: 0
@@ -19,7 +19,7 @@ char *_strdup(char *str)
 	while (str[length] != '\0')
 		length++;
 
-	duplicate = (char *)malloc((length + 1) *sizeof(char));
+	duplicate = (char *)malloc((length + 1) * sizeof(char));
 
 	if (duplicate == NULL)
 		return (NULL);
