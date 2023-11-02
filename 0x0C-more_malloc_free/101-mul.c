@@ -37,7 +37,7 @@ int multiply(int num1, int num2)
  * @argc: The number of command-line arguments.
  * @argv: An array containing the command-line arguments.
  *
- * Return: 0 on success, 98 on incorrect number of arguments or non-digit inputs.
+ * Return: 0 on success.
  */
 int main(int argc, char *argv[])
 {
