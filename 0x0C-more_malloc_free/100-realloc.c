@@ -4,12 +4,11 @@
 /**
  * _realloc - reallocates memory block
  * @ptr: ponter to prev memory
- * @old_size: size of allocated space
  * @new_size: new size of memory block
  *
  * Return: pointer to reallcted memory
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int new_size)
 {
 	void *new_ptr;
 
@@ -22,13 +21,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (ptr == NULL)
 	{
 		new_ptr = malloc(new_size);
-		if(new_ptr == NULL)
+		if (new_ptr == NULL)
 			return (NULL);
 		return (new_ptr);
 	}
 
 	new_ptr = realloc(ptr, new_size);
-	if(new_ptr == NULL)
+	if (new_ptr == NULL)
 		return (NULL);
 
 	return (new_ptr);
