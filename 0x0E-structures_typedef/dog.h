@@ -1,19 +1,19 @@
 #ifndef DOG_H
 #define DOG_H
-/**
- * struct dog - Data type of dog
- * @name: First member
- * @age: Second member
- * @owner: Third member
- *
- * Description: Representing a dog type
- */
 
+/**
+ * struct dog - structure of dog
+ * @name: memebre
+ * @owner: member
+ * @age: member
+ *
+ * Description: defines the structur of dog
+ */
 struct dog
 {
 	char *name;
 	float age;
 	char *owner;
 };
-
+void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
