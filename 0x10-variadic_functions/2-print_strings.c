@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 /**
- * print_string - Prints string
+ * print_strings - Prints string
  * @separator: The string to be printed
  * @n: No. of strings passed to a func
  */
