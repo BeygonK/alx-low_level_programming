@@ -4,7 +4,7 @@
  * list_len - counts the number of elements
  * @h: pointer to the head of the list
  *
- * Return: the number of elements 
+ * Return: the number of elements
  */
 size_t list_len(const list_t *h)
 {
