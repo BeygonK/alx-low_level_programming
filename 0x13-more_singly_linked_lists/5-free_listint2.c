@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stddlib.h>
+#include <stdlib.h>
 /**
  * free_listint2 - frees list
  * @head: pointer to head node
