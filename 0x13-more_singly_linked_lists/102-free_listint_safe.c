@@ -22,7 +22,7 @@ size_t free_listint_safe(listint_t **h)
 		if ((size_t)next <= size)
 		{
 			*h = NULL;
-			break
+			break;
 		}
 
 		current = next;
