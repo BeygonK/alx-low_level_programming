@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * binary_to_uint - converts binary to u int
- * @b: pointer to strings 
+ * @b: pointer to strings
  *
  * Return: int or 0
  */
