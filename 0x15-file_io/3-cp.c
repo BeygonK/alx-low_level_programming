@@ -39,26 +39,26 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		print_error(97, "Usage: %s file_from file_to\n", argv[0]);
 
-	src = open(argv[1], O_RDONLY);
-	if (src == -1)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
 		print_error(98, "Can't read from file %s\n", argv[1]);
 
-	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_permissions);
-	if (dest == -1)
+	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_permissions);
+	if (file_to == -1)
 		print_error(99, "Error:can't write to file %s\n", argv[2]);
 
-	while ((bytes_r = read(src, buffer, BUFFER_SIZE)) > 0)
+	while ((bytes_r = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		bytes_w = write(dest, buffer, bytes_r);
+		bytes_w = write(file_to, buffer, bytes_r);
 		if (bytes_w == -1)
 			print_error(99, "Error:Can't write to file %s\n", argv[2]);
 	}
 	if (bytes_r == -1)
 		print_error(98, "Error: Can't read from file %s\n", argv[1]);
-	if (close(src) == -1)
-		print_error(100, "Error: Can't close fd %d\n", src);
-	if (close(dest) == -1)
-		print_error(100, "Error: Can't close fd %d\n", dest);
+	if (close(file_from) == -1)
+		print_error(100, "Error: Can't close fd %d\n", file_from);
+	if (close(file_to) == -1)
+		print_error(100, "Error: Can't close fd %d\n", file_to);
 
 	return (0);
 }
