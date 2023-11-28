@@ -1,6 +1,6 @@
 #include "main.h"
 /***
- * creat_file - creates a file and write content
+ * create_file - creates a file and write content
  * @filename: the name of the file
  * @text_content: string
  *
@@ -8,22 +8,27 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *file;
-	int result;
+	int file, result;
+	mode_t file_perm = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)
 		return (-1);
 
-	file = fopen(filename, "w");
-	if (file == NULL)
+	file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, file_perm);
+	if (file == -1)
 		return (-1);
 
 	if (text_content != NULL)
-		fputs(text_content, file);
-
-	result = fclose(file);
-	if (result == EOF)
-		return (-1);
+	{
+		result = write(file, text_content, strlen(text_content));
+		if (result == -1)
+		{
+			close(file);
+			return (-1);
+		}
+	}
+	close(file);
 
 	return (1);
 }
+
