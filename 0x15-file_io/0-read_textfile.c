@@ -8,21 +8,19 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	ssize_t count = 0;
-	int c;
+	char *buffer;
+	ssize_t a;
+	ssize_t b;
+	ssize_t c;
 
-	if (filename == NULL)
+	a = open(filename, O_RDONLY);
+	if (a == -1)
 		return (0);
-	file = fopen(filename, "r");
-	if (file == NULL)
-		return (0);
-	while (count < (ssize_t)letters && (c = fgetc(file)) != EOF)
-	{
-		putchar(c);
-		count++;
-	}
+	buffer = malloc(sizeof(char) * letters);
+	c = read(a, buffer, letters);
+	b = write(STDOUT_FILENO, buffer, c);
 
-	fclose(file);
-	return (count);
+	free(buffer);
+	close(a);
+	return (b);
 }
