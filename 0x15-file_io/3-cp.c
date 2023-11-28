@@ -32,26 +32,26 @@ void print_error(int exit_code, const char *format, ...)
  */
 int main(int argc, char *argv[])
 {
-	int src, dest, bytes_r, bytes_w;
+	int file_from, file_to, bytes_r, bytes_w;
 	char buffer[BUFFER_SIZE];
 	mode_t file_permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
-		print_error(97, "Usage: %s src dest\n", argv[0]);
+		print_error(97, "Usage: %s file_from file_to\n", argv[0]);
 
 	src = open(argv[1], O_RDONLY);
 	if (src == -1)
-		print_error(98, "Cant read from file %s\n", argv[1]);
+		print_error(98, "Can't read from file %s\n", argv[1]);
 
 	dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, file_permissions);
 	if (dest == -1)
-		print_error(99, "Error:cant write to %s\n", argv[2]);
+		print_error(99, "Error:can't write to file %s\n", argv[2]);
 
 	while ((bytes_r = read(src, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_w = write(dest, buffer, bytes_r);
 		if (bytes_w == -1)
-			print_error(99, "Error:Cant write to %s\n", argv[2]);
+			print_error(99, "Error:Can't write to file %s\n", argv[2]);
 	}
 	if (bytes_r == -1)
 		print_error(98, "Error: Can't read from file %s\n", argv[1]);
