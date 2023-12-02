@@ -2,7 +2,7 @@
 
 /**
  * print_sign - Prints depending on parameter
- * 0n: argument
+ * @n: argument
  * Return: 0
  */
 
