@@ -1,8 +1,8 @@
 #include "main.h"
 #include <ctype.h>
 /**
- * int _isalpha - chech if c is alpha
- * @c:param
+ * _isalpha - chech if c is alpha
+ * @c: param
  * Return: 1 (success)
  *
  */
