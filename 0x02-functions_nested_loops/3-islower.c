@@ -3,6 +3,7 @@
 
 /**
  * _islower - chech if a character is lowercase
+ * @c: param
  * Return: 1 (success)
  */
 
