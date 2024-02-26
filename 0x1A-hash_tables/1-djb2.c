@@ -1,4 +1,4 @@
-#include <stdint.h> // For uint32_t, ensuring the size of unsigned long int is consistent across platforms
+#include <stdint.h>
 
 /**
  * hash_djb2 - Implements the DJB2 hash algorithm
