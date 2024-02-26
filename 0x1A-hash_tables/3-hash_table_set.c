@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <string.h>
-
-// Assuming hash_table_t, hash_node_t, and key_index are defined as before
+#include "hash_tables.h"
 
 /**
  * hash_table_set - Adds an element to the hash table
